@@ -1,21 +1,35 @@
 <div class="container justify-center items-center flex gap-2 flex-col h-screen">
   <h1 class="text-center text-2xl">Les ReactiveForms</h1>
-  <form class="flex flex-col gap-2 w-full md:w-3/4 lg:w-1/2">
+  <span>Email : {{ formSignup.value.email }}</span>
+  <form
+    class="flex flex-col gap-2 w-full md:w-3/4 lg:w-1/2"
+    [formGroup]="formSignup"
+    (ngSubmit)="handleSubmit()"
+  >
     <label class="flex justify-between">
       <span class="w-28">Email :</span>
 
-      <input class="border-2 rounded-md border-gray-500 flex-1" />
+      <input
+        class="border-2 rounded-md border-gray-500 flex-1"
+        formControlName="email"
+      />
     </label>
     <label class="flex justify-between">
       <span class="w-28"> Mot de passe :</span>
 
-      <input class="border-2 rounded-md border-gray-500 flex-1" />
+      <input
+        class="border-2 rounded-md border-gray-500 flex-1"
+        formControlName="password"
+      />
     </label>
     <label class="flex justify-between">
       <span class="w-28">Mot de passe :</span>
 
-      <input class="border-2 rounded-md border-gray-500 flex-1" />
+      <input
+        class="border-2 rounded-md border-gray-500 flex-1"
+        formControlName="repeatPassword"
+      />
     </label>
-    <button variant="default" hlmBtn>Connexion</button>
+    <button hlmBtn>Connexion</button>
   </form>
 </div>
